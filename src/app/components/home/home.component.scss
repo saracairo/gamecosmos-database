@@ -1,0 +1,75 @@
+@import '/src/scss/styles.scss';
+
+.home-wrapper {
+  margin-top: 75px;
+  padding: 0 0 40px;
+}
+
+.filters {
+  @include flexCenter(row);
+  padding: 40px 0 0;
+}
+
+.games {
+  @include flexCenter(row);
+  flex-wrap: wrap;
+  @include maxWidthHeight(1200px, 100%);
+  margin: 20px auto;
+
+  .game-card {
+    @include widthHeight(280px, 330px);
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 40px 5px 40px 5px;
+    background-color: #202020;
+    box-shadow: 4px 3px 8px 0px rgba(44, 200, 47, 0.22);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 4px 3px 11px 6px rgba(44, 200, 47, 0.22);
+      transform: translateY(-3px);
+    }
+
+    .thumbnail-container {
+      position: relative;
+      background-color: #000;
+      color: #fff;
+      @include widthHeight(100%, 200px);
+      text-align: center;
+
+      .thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        @include widthHeight(100%, 100%);
+        margin: 0 auto;
+        object-fit: cover;
+      }
+    }
+
+    .description {
+      @include flexEnd(column);
+      align-items: start;
+      @include widthHeight(100%, 130px);
+      padding: 20px;
+
+      .name {
+        color: #fff;
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+        line-height: 20px;
+        white-space: wrap;
+      }
+
+      .platforms {
+        @include flexCenter(row);
+        .platform {
+          @include widthHeight(20px, 100%);
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

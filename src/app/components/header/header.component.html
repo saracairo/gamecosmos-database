@@ -1,0 +1,18 @@
+<header>
+  <span class="logo" routerLink="/">
+    GameCosmos Database
+  </span>
+  <form class="searchbar-form"
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)">
+    <input class="searchbar-input"
+      type="text"
+      name="search"
+      ngModel
+      placeholder="Search 500,000+ games..."
+    />
+    <button class="searchbar-btn">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+</header>

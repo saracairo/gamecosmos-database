@@ -1,0 +1,36 @@
+<div class="details">
+
+  <section class="game-banner">
+    <img
+      class="game-banner-img"
+      src="{{ game.background_image }}"
+      alt="background image"
+    />
+  </section>
+
+  <section class="game-content">
+    <div class="details-wrapper">
+      <div class="game-header">
+        <h1 class="game-header-title">{{ game.name }}</h1>
+        <h2 class="game-header-release-date">
+          Release: {{ game.released | date }}
+        </h2>
+        <p class="game-header-genres">
+          <span *ngFor="let genre of game.genres; let last = last">
+            {{ genre.name }}
+            <span °ngIf="!last">, </span>
+          </span>
+        </p>
+        <!-- Metacritic -->
+        <a
+          class="game-gauge-label"
+          target="_blank"
+          href="{{ game.metacritic_url }}"
+          >Metacritic
+        </a>
+      </div>
+      <app-game-tabs></app-game-tabs>
+    </div>
+  </section>
+
+</div>

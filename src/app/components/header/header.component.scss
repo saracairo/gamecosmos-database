@@ -1,0 +1,57 @@
+@import '/src/scss/styles.scss';
+
+header {
+  position: fixed;
+  @include widthHeight(100%, 75px);
+  @include flexBetween(row);
+  background-color: $primary;
+  top: 0;
+  left: 0;
+  padding: 0 4rem;
+  z-index: 1000;
+
+  .logo {
+    font-family: $title-font;
+    font-size: 30px;
+  }
+
+  .searchbar {
+    &-form {
+      position: relative;
+      @include widthHeight(400px, 50px);
+    }
+    &-input {
+      position: absolute;
+      @include widthHeight(310px, 100%);
+      margin-left: 10px;
+      padding: 10px;
+      border-radius: 15px 0 0 2px;
+      border: none;
+      outline: none;
+    }
+    &-btn {
+      position: absolute;
+      right: 0;
+      @include widthHeight(90px, 100%);
+      background-color: $secondary;
+      color: white;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-left: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 0 2px 15px 0;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: white;
+        color: $secondary;
+      }
+      &:active {
+        background-color: $secondary-dark;
+        color: white;
+
+        cursor: pointer;
+      }
+    }
+  }
+}
